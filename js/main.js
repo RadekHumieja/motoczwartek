@@ -12,10 +12,6 @@ const setTime = () => {
 	const hours = Math.floor(result / 1000 / 60 / 60) % 24;
 	const minutes = Math.floor(result / 1000 / 60) % 60;
 
-	console.log(`Dni: ${days}`);
-	console.log(`Godziny: ${hours}`);
-	console.log(`Minuty: ${minutes}`);
-
 	daysCard.textContent = days;
 	hoursCard.textContent = hours;
 	minutesCard.textContent = minutes;
