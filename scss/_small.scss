@@ -1,0 +1,185 @@
+// @use './color' as col;
+// @use './mixin' as *;
+// @use './animation' as *;
+// @use './font' as *;
+
+@media (min-width: 580px) {
+	.header {
+		.title {
+			width: 500px;
+			left: 50%;
+			transform: translate(-50%);
+			padding-top: 30vh;
+			&_h1 {
+				h1 {
+					font-size: 4.2rem;
+				}
+				img {
+					width: 40px;
+				}
+			}
+			p {
+				font-size: 2.6rem;
+			}
+			a {
+				font-size: 4rem;
+				top: 180px;
+				left: 20px;
+			}
+		}
+		.info {
+			&_addres {
+				top: 40px;
+				right: 30px;
+				font-size: 2rem;
+				width: 50%;
+			}
+		}
+		.logo {
+			top: 10px;
+			left: 75px;
+			width: 180px;
+		}
+		.time {
+			&_title {
+				font-size: 2.4rem;
+				margin-left: 50px;
+			}
+			&_end {
+				font-size: 2rem;
+				gap: 40px;
+			}
+			&_card {
+				width: 100px;
+				height: 100px;
+				border-radius: 10px;
+				p {
+					&:nth-child(1) {
+						font-size: 2rem;
+						padding-top: 25px;
+					}
+				}
+			}
+		}
+		.arrows {
+			font-size: 1.6rem;
+		}
+	}
+	.competition {
+		&_foto {
+			img {
+				width: 60%;
+			}
+		}
+		&_text {
+			font-size: 2rem;
+			&-mail {
+				.mailto {
+					font-size: 2.4rem;
+				}
+			}
+		}
+	}
+	.statute {
+		font-size: 2rem;
+		padding-top: 0px;
+	}
+}
+@media (min-width: 765px) {
+	.header {
+		.title {
+			width: 600px;
+			// left: 50%;
+			// transform: translate(-50%);
+			padding-top: 35vh;
+			&_h1 {
+				h1 {
+					font-size: 5.2rem;
+				}
+				img {
+					width: 60px;
+				}
+			}
+			p {
+				font-size: 3rem;
+			}
+			a {
+				font-size: 5rem;
+				top: 190px;
+				left: 0px;
+			}
+		}
+		.info {
+			&_addres {
+				top: 60px;
+				right: 70px;
+				font-size: 2rem;
+				width: 40%;
+				.data{
+					font-size: 2.4rem;
+				}
+			}
+		}
+		.logo {
+			top: 20px;
+			left: 100px;
+			width: 180px;
+		}
+		.time {
+			&_title {
+				font-size: 2.8rem;
+				// margin-left: 50px;
+			}
+			&_end {
+				font-size: 2rem;
+				gap: 60px;
+			}
+			&_card {
+				width: 120px;
+				height: 120px;
+				border-radius: 10px;
+				gap: 25px;
+				margin: 20px 0;
+				p {
+					&:nth-child(1) {
+						font-size: 2.2rem;
+						padding-top: 35px;
+					}
+				}
+			}
+		}
+		.arrows {
+			font-size: 1.8rem;
+			bottom: 0;
+		}
+	}
+	.competition {
+		padding-top: 60px;
+		// &_foto {
+		// 	img {
+		// 		width: 60%;
+		// 	}
+		// }
+		&_text {
+			padding: 0px 40px;
+			padding-top: 60px;
+			// font-size: 2.2rem;
+			// &-mail {
+			// 	.mailto {
+			// 		font-size: 2.4rem;
+			// 	}
+			// }
+		}
+	}
+	.statute {
+		font-size: 2rem;
+		padding-top: 0px;
+		&_text {
+			padding: 0 40px;
+		}
+		h4{
+			font-size: 2.4rem;
+
+		}
+	}
+}
