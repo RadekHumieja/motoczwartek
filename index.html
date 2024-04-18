@@ -177,9 +177,81 @@
                     🏁</h4>
             </div>
         </section>
+        <section class="form competition" id="form">
+            <div class="wrapper competition_flex">
+                <div class="contact-form">
+                    <h2>Twoja Opinia jest dla Nas Ważna!</h2>
+                    <form id="form" action="./php/mail.php" method="post" class="contact-form">
+                        <div class="contact-box">
+                            <h3>Czy bierzesz udział w konkursie "Duet Doskonały"?</h3>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-yes" name="answer-yes">
+                                <label for="answer-yes">Tak</label>
+                            </div>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-no" name="answer-no">
+                                <label for="answer-no">Nie</label>
+                            </div>
+                            <p class="contact-box--error">Zaznacz pole.</p>
+                        </div>
+                        <div class="contact-box">
+                            <h3>Jeśli odpowiedziałeś/aś "Nie", czy możesz podzielić się powodem swojej decyzji?</h3>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-time" name="answer-time">
+                                <label for="answer-time">Brak czasu</label>
+                            </div>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-shame" name="answer-shame">
+                                <label for="answer-shame">Wstydzę się</label>
+                            </div>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-other" name="answer-other">
+                                <label for="answer-other">Inny powód</label>
+                            </div>
+                            <p class="contact-box--error">Zaznacz pole.</p>
+                        </div>
+                        <div class="contact-box">
+                            <h3>Jak oceniasz atrakcyjność konkursu "Duet Doskonały"?</h3>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-very" name="answer-very">
+                                <label for="answer-very">Bardzo atrakcyjny</label>
+                            </div>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-attractive" name="answer-attractive">
+                                <label for="answer-attractive">Atrakcyjny</label>
+                            </div>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-neutral" name="answer-neutral">
+                                <label for="answer-neutral">Neutralny</label>
+                            </div>
+                            <div class="contact-box--answer">
+                                <input type="checkbox" id="answer-unattractive" name="answer-unattractive">
+                                <label for="answer-unattractive">Nieatrakcyjny</label>
+                            </div>
+                            <p class="contact-box--error">Zaznacz pole.</p>
+                        </div>
+                        <div class="contact-box">
+                            <h3>Co moglibyśmy poprawić w przyszłych edycjach konkursu?</h3>
+                            <textarea name="msg" id="msg"></textarea>
+                            <p class="contact-box--error">Wpisz wiadomość!</p>
+                        </div>
+                        <div class="contact-box--rodo">
+                            <input type="checkbox" name="rodo" id="rodo">
+                            <label for="rodo" class="rodoText">Zgadzam się na przechowywanie przesłanych przeze mnie informacji w tej
+                                witrynie internetowej do celów udzielenia odpowiedzi na moje zapytanie.</label>
+                        </div>
+                        <button type="submit" class="contact-form--btn">Wyślij</button>
+
+                    </form>
+                    <p class="msg-status"></p>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <script src="./js/main.js"></script>
+    <script src="./js/email.js"></script>
 </body>
 
 </html>
