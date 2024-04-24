@@ -125,6 +125,18 @@ body {
   font-size: 1.6rem;
   font-weight: 600;
 }
+.header .info_addres .participants {
+  padding: 10px 25px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(177, 8, 7);
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.header .info_addres .participants:hover {
+  background-color: rgb(218, 219, 222);
+  color: black;
+}
 .header .info_mail {
   display: none;
   font-size: 1.6rem;
@@ -287,6 +299,7 @@ body {
 }
 
 .contact-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -379,16 +392,138 @@ body {
   background-color: rgba(189, 145, 145, 0.874);
   border: 1px solid rgb(188, 108, 108);
 }
-
-.msg-status {
+.contact-form .msg-status {
   display: none;
-  font-size: 1.4rem;
+  font-size: 3.4rem;
   position: absolute;
   top: 40px;
+  left: 50%;
+  transform: translate(-50%);
   width: 300px;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  z-index: 10;
+}
+
+.parList_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin: 40px auto;
+}
+.parList_card h2 {
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.parList_card-img {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.parList_card-img img {
+  width: 40%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.parList_card-img img:hover {
+  opacity: 1;
+}
+.parList_card-img--box {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.parList_card-img .show {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90%;
+  border: 5px solid rgb(187, 56, 56);
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 10;
+}
+.parList_card-img .show img {
+  cursor: auto;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 2s;
+}
+.parList_card-img .show .btn-left, .parList_card-img .show .btn-right, .parList_card-img .show .btn-out {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1% 4%;
+  font-size: 3vw;
+  background-color: rgba(0, 0, 0, 0.512);
+  border: transparent;
+  border-radius: 1vw;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+  transition: scale 0.3s;
+}
+.parList_card-img .show .btn-left:hover, .parList_card-img .show .btn-right:hover, .parList_card-img .show .btn-out:hover {
+  scale: 1.05;
+}
+.parList_card-img .show .btn-left {
+  left: 20px;
+}
+.parList_card-img .show .btn-right {
+  right: 20px;
+}
+.parList_card-img .show .btn-out {
+  top: 60px;
+  right: 40px;
+}
+.parList_card-text {
+  position: relative;
+  margin: auto 10px;
+}
+.parList_card-text h4 {
+  font-size: 2.1rem;
+  margin: 30px 20px;
+  text-align: center;
+}
+.parList_card-text p {
+  font-size: 1.8rem;
+  text-indent: 15px;
+  margin-bottom: 10px;
+}
+.parList_card-text .btn-parList {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 10px 25px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border: transparent;
+  border-radius: 10px;
+  background-color: rgb(195, 12, 12);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.parList_card-text .btn-parList:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .success {
@@ -470,6 +605,9 @@ body {
     font-size: 2rem;
     padding-top: 0px;
   }
+  .parList_card-img img {
+    width: 30%;
+  }
 }
 @media (min-width: 765px) {
   .header .title {
@@ -542,6 +680,21 @@ body {
   }
   .statute h4 {
     font-size: 2.4rem;
+  }
+  .parList_card h2 {
+    font-size: 3rem;
+  }
+  .parList_card-img img {
+    width: 20%;
+  }
+  .parList_card-text h4 {
+    font-size: 2.6rem;
+  }
+  .parList_card-text p {
+    font-size: 2.2rem;
+  }
+  .parList_card-text .btn-parList {
+    font-size: 2.2rem;
   }
 }
 @media (min-width: 998px) {
@@ -649,5 +802,49 @@ body {
   .statute h4 {
     font-size: 2rem;
     margin-bottom: 60px;
+  }
+  .parList_card {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    height: 400px;
+    margin: auto 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.197);
+  }
+  .parList_card h2 {
+    font-size: 3rem;
+  }
+  .parList_card-img {
+    flex-wrap: nowrap;
+  }
+  .parList_card-img img {
+    width: 15%;
+  }
+  .parList_card-text {
+    width: 250px;
+  }
+  .parList_card-text h4 {
+    font-size: 2.2rem;
+    width: 200px;
+    font-weight: 400;
+  }
+  .parList_card-text p {
+    font-size: 2.2rem;
+  }
+  .parList_card-text .btn-parList {
+    font-size: 2.2rem;
+  }
+  .parList_card-text--box {
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 70%;
+    height: 100%;
+    padding: 60px;
+    background-color: rgba(0, 0, 0, 0.779);
+    z-index: 10;
+    overflow-y: scroll;
   }
 }/*# sourceMappingURL=style.css.map */

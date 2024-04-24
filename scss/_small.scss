@@ -84,6 +84,15 @@
 		font-size: 2rem;
 		padding-top: 0px;
 	}
+	.parList{
+		&_card {
+			&-img{
+				img{
+					width: 30%;
+				}
+			}
+		}
+	}
 }
 @media (min-width: 765px) {
 	.header {
@@ -180,6 +189,30 @@
 		h4{
 			font-size: 2.4rem;
 
+		}
+	}
+	.parList{
+		&_card {
+			h2{
+				font-size: 3rem;
+			}
+			&-img{
+				img{
+					width: 20%;
+				}
+			}
+			&-text{
+				h4{
+					font-size: 2.6rem;
+				}
+				p{
+					font-size: 2.2rem;
+
+				}
+				.btn-parList{
+					font-size: 2.2rem;
+				}
+			}
 		}
 	}
 }

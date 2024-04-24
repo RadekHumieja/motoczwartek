@@ -7,8 +7,10 @@ const inputCheckBox = document.querySelectorAll('input');
 function checkeChoice() {
 	const check = this.parentElement.parentElement.querySelectorAll('input');
 	check.forEach((int) => {
-		if (int !== this && this.classList.contains('#rodo')) {
-			int.checked = false;
+		if (int !== this) {
+			if (!this.classList.contains('rodo')) {
+				int.checked = false;
+			}
 		}
 		if (int.checked === true) {
 			int.parentElement.parentElement
@@ -41,10 +43,14 @@ function checkImput() {
 
 	if (textArea.value === '' || textArea.value.length <= 3) {
 		textArea.classList.add('error');
-		textArea.parentElement.querySelector('.contact-box--error').classList.add('error');
+		textArea.parentElement
+			.querySelector('.contact-box--error')
+			.classList.add('error');
 	} else {
 		textArea.classList.remove('error');
-		textArea.parentElement.querySelector('.contact-box--error').classList.remove('error');
+		textArea.parentElement
+			.querySelector('.contact-box--error')
+			.classList.remove('error');
 	}
 
 	if (rodo.checked) {
@@ -69,25 +75,25 @@ function checkForm(e) {
 if (document.location.search === '?mail_status=sent') {
 	msgStatus.classList.add('success');
 	msgStatus.textContent = 'Wiadomość wysłana!';
-console.log('ok');
+	console.log('ok');
 	setTimeout(() => {
 		msgStatus.classList.remove('success');
 		window.location.replace(
 			'http://localhost:3000/Desktop/nVc/MotoCzwartek/www.motoczwartek.pl/index.html#form'
 		);
-	}, 3000);
+	}, 300);
 }
 
 if (document.location.search === '?mail_status=error') {
 	msgStatus.classList.add('error');
 	msgStatus.textContent = 'Wystąpił błąd.';
-console.log('error');
+	console.log('error');
 	setTimeout(() => {
 		msgStatus.classList.remove('error');
 		window.location.replace(
 			'http://localhost:3000/Desktop/nVc/MotoCzwartek/www.motoczwartek.pl/index.html#form'
 		);
-	}, 3000);
+	}, 300);
 }
 form.addEventListener('submit', checkForm);
 inputCheckBox.forEach((int) => int.addEventListener('input', checkeChoice));
