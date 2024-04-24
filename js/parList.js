@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 const parList = document.querySelector('.parList');
 const img = parList.querySelectorAll('img');
+const btnParList = document.querySelectorAll('.btn-parList');
 
 let imgClick;
 let imgShow;
@@ -57,9 +58,9 @@ function arrow() {
 	const btnRight = parListCardImg.querySelector('.btn-right');
 	btnLeft.addEventListener('click', () => {
 		if (imgShow == 0) {
-			imgClick = elements[elements.length-2];
+			imgClick = elements[elements.length - 2];
 		} else {
-            imgShow -= 1;
+			imgShow -= 1;
 			imgClick = elements[imgShow];
 		}
 		boxImg();
@@ -67,10 +68,10 @@ function arrow() {
 		coloseBox();
 	});
 	btnRight.addEventListener('click', () => {
-		if (imgShow == elements.length-2) {
+		if (imgShow == elements.length - 2) {
 			imgClick = elements[0];
 		} else {
-            imgShow += 1;
+			imgShow += 1;
 			imgClick = elements[imgShow];
 		}
 		boxImg();
@@ -78,5 +79,25 @@ function arrow() {
 		coloseBox();
 	});
 }
+function history() {
+    btnParList.forEach((btn) => {
+		btn.textContent = 'Moja Historia';
+	});
+	const histItem = this.parentElement.querySelector('.parList_card-text--box');
+	const histAll = document.querySelectorAll('.parList_card-text--box');
+	histAll.forEach((hist) => {
+		if (histItem != hist) {
+			hist.classList.add('disabled');
+		}
+	});
+	histItem.classList.toggle('disabled');
+	if (histItem.classList.contains('disabled')) {
+		this.textContent = 'Moja Historia';
+	} else {
+		this.textContent = 'Zwiń';
+	}
+	
+}
 
 img.forEach((img) => img.addEventListener('click', show));
+btnParList.forEach((btn) => btn.addEventListener('click', history));
